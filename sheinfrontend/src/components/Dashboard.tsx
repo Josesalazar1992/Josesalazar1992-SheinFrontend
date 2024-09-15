@@ -146,25 +146,6 @@ const Dashboard: React.FC = () => {
                             Elimina un articulo
                         </Link>
                     </li>
-                    <li>
-                        <Link 
-                            to="/dashboard/list-order" 
-                            onClick={() => setActiveTab('list-order')} 
-                            style={{
-                                textDecoration: 'none',
-                                width: '80%', 
-                                padding: '2px', 
-                                backgroundColor: activeTab === 'list-order' ? 'green' : 'transparent',
-                                color: activeTab === 'list-order' ? 'white' : 'black', 
-                                transition: 'color 1.0s ease',
-                                borderRadius: '10px', 
-                                border: 'none', 
-                                cursor: 'pointer' 
-                              }}
-                        >
-                            Listar ordenes
-                        </Link>
-                    </li>
                     {/* Agrega más opciones aquí */}
                 </ul>
             </nav>
