@@ -6,6 +6,7 @@ import UserCreation from './Usercreation';
 import DeleteUser from './Deleteuser';
 import AddProduct from './Addproduct';
 import DeleteProduct from './Deleteproduct';
+import ListOrder from './Listorder';
 // Importa otros componentes aquí
 
 const Dashboard: React.FC = () => {
@@ -70,6 +71,15 @@ const Dashboard: React.FC = () => {
                             Elimina un articulo
                         </Link>
                     </li>
+                    <li>
+                        <Link 
+                            to="/dashboard/list-order" 
+                            onClick={() => setActiveTab('list-order')} 
+                            style={{ textDecoration: 'none', color: activeTab === 'list-order' ? 'blue' : 'black' }}
+                        >
+                            Listar ordenes
+                        </Link>
+                    </li>
                     {/* Agrega más opciones aquí */}
                 </ul>
             </nav>
@@ -83,6 +93,7 @@ const Dashboard: React.FC = () => {
                     <Route path="delete-user" element={<DeleteUser />} />
                     <Route path="add-product" element={<AddProduct />} />
                     <Route path="delete-product" element={<DeleteProduct />} />
+                    <Route path="list-order" element={<ListOrder />} />
                     {/* Agrega más rutas para otros componentes aquí */}
                 </Routes>
             </div>
