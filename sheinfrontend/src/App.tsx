@@ -1,12 +1,17 @@
-import React from "react";
-import './App.css';
-import Login from "./components/Login";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
 
 const App: React.FC = () => {
     return (
-        <div className="App">
-          <Login /> {/* Renderiza el componente Login */}
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/dashboard/*" element={<Dashboard />} />  {/* Agrega el wildcard para manejar rutas dentro del dashboard */}
+                <Route path="/" element={<Navigate to="/login" />} />
+            </Routes>
+        </Router>
     );
 };
 
