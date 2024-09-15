@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
+import background from '../Images/lateral.jpg';
 import CreateOrder from './Createorder';
 import DeleteOrder from './Deleteorder';
 import UserCreation from './Usercreation';
@@ -15,13 +16,37 @@ const Dashboard: React.FC = () => {
     return (
         <div style={{ display: 'flex' }}>
             {/* Barra lateral */}
-            <nav style={{ width: '200px', padding: '10px', borderRight: '1px solid #ccc' }}>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
+            <nav style={{
+                width: '225px',  // Ancho de la barra lateral
+                padding: '20px', // Espaciado interno
+                height: '100vh',
+                borderRight: '10px solid #ccc', // Borde derecho
+                backgroundImage: `url(${background})`, // Imagen de fondo
+                backgroundSize: '', // Asegura que la imagen cubra todo el área
+                backgroundPosition: 'center', // Centra la imagen
+                }}>
+                <ul style={{
+                        listStyle: 'none',
+                        backgroundColor: 'orange',
+                        borderRadius: '10px',
+                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                        padding: '10px', // añade espacio alrededor de los elementos de la lista
+                    }}>
                     <li>
                         <Link 
                             to="/dashboard/create-order" 
                             onClick={() => setActiveTab('create-order')} 
-                            style={{ textDecoration: 'none', color: activeTab === 'create-order' ? 'blue' : 'black' }}
+                            style={{
+                                textDecoration: 'none',
+                                width: '80%', 
+                                padding: '2px', 
+                                backgroundColor: activeTab === 'create-order' ? 'green' : 'transparent',
+                                color: activeTab === 'create-order' ? 'white' : 'black', 
+                                transition: 'color 1.0s ease',
+                                borderRadius: '10px', 
+                                border: 'none', 
+                                cursor: 'pointer' 
+                              }}
                         >
                             Crea una orden
                         </Link>
@@ -30,7 +55,17 @@ const Dashboard: React.FC = () => {
                         <Link 
                             to="/dashboard/delete-order" 
                             onClick={() => setActiveTab('delete-order')} 
-                            style={{ textDecoration: 'none', color: activeTab === 'delete-order' ? 'blue' : 'black' }}
+                            style={{
+                                textDecoration: 'none',
+                                width: '80%', 
+                                padding: '2px', 
+                                backgroundColor: activeTab === 'delete-order' ? 'green' : 'transparent',
+                                color: activeTab === 'delete-order' ? 'white' : 'black', 
+                                transition: 'color 1.0s ease',
+                                borderRadius: '10px', 
+                                border: 'none', 
+                                cursor: 'pointer' 
+                              }}
                         >
                             Borra una orden
                         </Link>
@@ -39,7 +74,17 @@ const Dashboard: React.FC = () => {
                         <Link 
                             to="/dashboard/user-create" 
                             onClick={() => setActiveTab('user-create')} 
-                            style={{ textDecoration: 'none', color: activeTab === 'user-create' ? 'blue' : 'black' }}
+                            style={{
+                                textDecoration: 'none',
+                                width: '80%', 
+                                padding: '2px', 
+                                backgroundColor: activeTab === 'user-create' ? 'green' : 'transparent',
+                                color: activeTab === 'user-create' ? 'white' : 'black', 
+                                transition: 'color 1.0s ease',
+                                borderRadius: '10px', 
+                                border: 'none', 
+                                cursor: 'pointer' 
+                              }}
                         >
                             Agrega un cliente
                         </Link>
@@ -48,7 +93,17 @@ const Dashboard: React.FC = () => {
                         <Link 
                             to="/dashboard/delete-user" 
                             onClick={() => setActiveTab('delete-user')} 
-                            style={{ textDecoration: 'none', color: activeTab === 'delete-user' ? 'blue' : 'black' }}
+                            style={{
+                                textDecoration: 'none',
+                                width: '80%', 
+                                padding: '2px', 
+                                backgroundColor: activeTab === 'delete-user' ? 'green' : 'transparent',
+                                color: activeTab === 'delete-user' ? 'white' : 'black', 
+                                transition: 'color 1.0s ease',
+                                borderRadius: '10px', 
+                                border: 'none', 
+                                cursor: 'pointer' 
+                              }}
                         >
                             Elimina un cliente
                         </Link>
@@ -57,7 +112,17 @@ const Dashboard: React.FC = () => {
                         <Link 
                             to="/dashboard/add-product" 
                             onClick={() => setActiveTab('add-product')} 
-                            style={{ textDecoration: 'none', color: activeTab === 'add-product' ? 'blue' : 'black' }}
+                            style={{
+                                textDecoration: 'none',
+                                width: '80%', 
+                                padding: '2px', 
+                                backgroundColor: activeTab === 'add-product' ? 'green' : 'transparent',
+                                color: activeTab === 'add-product' ? 'white' : 'black', 
+                                transition: 'color 1.0s ease',
+                                borderRadius: '10px', 
+                                border: 'none', 
+                                cursor: 'pointer' 
+                              }}
                         >
                             Agrega un producto
                         </Link>
@@ -66,7 +131,17 @@ const Dashboard: React.FC = () => {
                         <Link 
                             to="/dashboard/delete-product" 
                             onClick={() => setActiveTab('delete-product')} 
-                            style={{ textDecoration: 'none', color: activeTab === 'delete-product' ? 'blue' : 'black' }}
+                            style={{
+                                textDecoration: 'none',
+                                width: '80%', 
+                                padding: '2px', 
+                                backgroundColor: activeTab === 'delete-product' ? 'green' : 'transparent',
+                                color: activeTab === 'delete-product' ? 'white' : 'black', 
+                                transition: 'color 1.0s ease',
+                                borderRadius: '10px', 
+                                border: 'none', 
+                                cursor: 'pointer' 
+                              }}
                         >
                             Elimina un articulo
                         </Link>
@@ -75,7 +150,17 @@ const Dashboard: React.FC = () => {
                         <Link 
                             to="/dashboard/list-order" 
                             onClick={() => setActiveTab('list-order')} 
-                            style={{ textDecoration: 'none', color: activeTab === 'list-order' ? 'blue' : 'black' }}
+                            style={{
+                                textDecoration: 'none',
+                                width: '80%', 
+                                padding: '2px', 
+                                backgroundColor: activeTab === 'list-order' ? 'green' : 'transparent',
+                                color: activeTab === 'list-order' ? 'white' : 'black', 
+                                transition: 'color 1.0s ease',
+                                borderRadius: '10px', 
+                                border: 'none', 
+                                cursor: 'pointer' 
+                              }}
                         >
                             Listar ordenes
                         </Link>

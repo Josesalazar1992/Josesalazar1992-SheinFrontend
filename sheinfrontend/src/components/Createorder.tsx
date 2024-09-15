@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import background from '../Images/create_order.jpg';
 
 const CreateOrder: React.FC = () => {
     const [orderName, setOrderName] = useState<string>(''); // Estado para almacenar el nombre de la orden
@@ -41,11 +42,20 @@ const CreateOrder: React.FC = () => {
     
 
     return (
-        <div>
-            <h2>Crea una orden de compra</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="orderName">Nombre de la orden:</label>
+        <div style={{
+                backgroundImage: `url(${background})`,
+                height: '100vh',
+                backgroundPosition: 'center', // Centra la imagen
+                backgroundSize: 'cover'
+
+                }}>
+            <h2 style={{textAlign: 'center',
+                        padding: '30px',
+             }}>Crea una orden de compra</h2>
+            <form style={{textAlign: 'center'}} onSubmit={handleSubmit}>
+                <div style={{textAlign: 'center',
+                            padding: '30px'}}>
+                    <label htmlFor="orderName" style={{display: 'block', marginBottom: '8px'}}>Nombre de la orden </label>
                     <input
                         type="text"
                         id="orderName"
@@ -53,11 +63,23 @@ const CreateOrder: React.FC = () => {
                         onChange={handleOrderNameChange} // Usa la nueva función de cambio
                     />
                 </div>
-                <button type="submit">Crear Orden</button>
+                <button style={{textAlign: 'center',
+                                padding: '5px',
+                                backgroundColor: 'pink',
+                                borderRadius: '10px',
+                                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'}} 
+                        type="submit">Crear Orden</button>
             </form>
 
-            {message && <p style={{ color: 'green' }}>{message}</p>}
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {message && <p style={{ color: 'green',
+                                    textAlign: 'center',
+                                    padding: '30px'
+                            }}>{message}</p>}
+            {error && <p style={{ 
+                                color: 'red',
+                                textAlign: 'center',
+                                padding: '30px'
+                            }}>{error}</p>}
         </div>
     );
 };
